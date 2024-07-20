@@ -1,0 +1,7 @@
+git commit -am "change 1"
+git push origin master
+
+
+git add .
+git commit -am "change 1"
+git push origin master
