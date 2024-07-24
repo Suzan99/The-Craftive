@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar logo{
+    text-align: center;
+}
+
+.left-menu{
+    flex: 1;
+    text-align: left;
+}
+
+.left-menu ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.left-menu ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.right-menu{
+    flex: 1;
+    text-align: right;
+}
+
+.right-menu ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.right-menu ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+.commerce-slider{
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slides{
+    width: 20%;
+    transition: 2s;
+}
+
+.slides input{
+    display: none;
+}
+
+.slides img{
+    width: 900px;
+    height: 800px;
+}
+
+/*manual slide*/
+.navigation-manual{
+    position: absolute;
+    width: 900px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: gray;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+/*auto slide*/
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 900px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: gray;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: gray;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: gray;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: gray;
+}
