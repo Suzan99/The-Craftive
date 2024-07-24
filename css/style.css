@@ -1,58 +1,318 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-:root{
-    --white-color:#ffffff;
-    --black-color:#000000;
-
-    --eng-font:"Josefin Sans", sans-serif;
-    --kor-font:"IBM Plex Sans KR", sans-serif;
-    --fs14: 14px;
-    --fw600: 600;
-}
-
-html{
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-*{
+/* General styling */
+body {
     margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    background: transparent; /* No background color */
+    box-shadow: none; /* No shadow */
+    border-bottom: 1px solid #ddd; /* Optional: thin border for separation */
+}
+
+.navbar__left {
+    flex: 1;
+}
+
+.navbar__toggle {
+    background: none;
+    border: none;
+    color: black; /* Change to black or desired text color */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    text-transform: uppercase; /* Optional: make text uppercase */
+    font-weight: bold; /* Optional: make text bold */
+}
+
+.navbar__center {
+    flex: 2;
+    text-align: center;
+}
+
+.navbar__logo {
+    height: 40px;
+}
+
+.navbar__right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.navbar__icon {
+    background: none;
+    border: none;
+    color: black; /* Change to black or desired text color */
+    font-size: 16px; /* Adjust font size for text labels */
+    cursor: pointer;
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    font-weight: normal; /* Adjust font weight as needed */
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #f9f9f9; /* Light background color for the sidebar */
+    color: #333; /* Darker text color for better readability */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Close button */
+.sidebar__close {
+    background: none;
+    border: none;
+    color: #333; /* Change to dark text color */
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 15px; /* Move to the left */
+    cursor: pointer;
+}
+
+/* Language container styling */
+.language-container {
+    position: absolute;
+    top: 15px; /* Adjust as needed */
+    right: 15px; /* Adjust as needed */
+}
+
+.language-toggle {
+    background: none;
+    border: none;
+    color: black; /* Change to black or desired text color */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    text-transform: uppercase; /* Optional: make text uppercase */
+    font-weight: bold; /* Optional: make text bold */
+    display: flex;
+    align-items: center;
+}
+
+.language-toggle i {
+    margin-left: 8px; /* Space between text and icon */
+}
+
+/* Language dropdown menu styling */
+.language-menu {
+    display: none; /* Hide language menu by default */
+    list-style-type: none;
     padding: 0;
-}
-*,::before,::after{
-    box-sizing: border-box;
-}
-
-body{
-    font-family: var(--eng-font);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.8;
-    color: var(--black-color);
-    background-color: var(--white-color);
+    margin: 0;
+    background: none; /* No background color */
+    border: none; /* No border */
+    box-shadow: none; /* No shadow */
+    position: absolute; /* Position absolutely within container */
+    top: 100%; /* Position below the language button */
+    right: 0; /* Align with the right edge of the language button */
+    z-index: 10; /* Ensure dropdown is above other content */
+    width: 120px; /* Set a specific width if needed */
 }
 
-a{
+/* Dropdown menu items */
+.language-menu li {
+    padding: 0; /* Remove padding for dropdown items */
+}
+
+/* Dropdown menu links */
+.language-menu li a {
+    color: #333; /* Dark text color */
+    font-size: 15px; /* Slightly smaller font size for dropdown items */
+    display: flex; /* Flexbox for vertical alignment */
+    align-items: center;
+    height: 40px; /* Ensure full height clickable area */
+    padding: 0 15px; /* Add padding inside dropdown items */
+    box-sizing: border-box; /* Ensure padding does not affect height */
+    margin-bottom: 0; /* Remove space between dropdown items */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for dropdown items */
+.language-menu li a:hover {
+    background-color: #f0f0f0; /* Slightly darker gray background on hover */
+}
+
+/* Show dropdown when active */
+.language-container.active .language-menu {
+    display: block;
+}
+
+/* Menu styling */
+.sidebar__menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+}
+
+/* Ensure dropdowns push content down */
+.sidebar__menu li {
+    position: relative; /* Ensure dropdowns are positioned relative to this parent */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Menu item links */
+.sidebar__menu li a {
+    color: #333; /* Dark text color */
     text-decoration: none;
-    color: inherit;
-    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Remove top and bottom padding, keep horizontal padding */
+    font-size: 16px; /* Adjust font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    height: 45px; /* Consistent height */
+    line-height: 45px; /* Align text vertically */
 }
 
-img{
-    max-width: 100%;
-    vertical-align: middle;
+/* Hover effect */
+.sidebar__menu li a:hover,
+.sidebar__menu li a.active {
+    background-color: #e0e0e0; /* Light gray background on hover or active */
+    color: #000; /* Dark text color on hover */
 }
 
-ul{list-style: none;}
-p{margin: 0 0 15px;}
-input,textarea.select{font: inherit;width: 100%;}
-input[type=checkbox],input[type=radio] {width: auto;}
-input::placeholder, textarea::placeholder {color: inherit;}
-button{font: inherit;}
-strong{font-weight: var(--fw600);}
+/* Dropdown menu styling */
+.dropdown {
+    position: relative; /* Ensure dropdown is positioned relative to parent */
+}
 
-.container{
-    max-width: var(--mx-width, 1200px);
-    padding: 0 var(--gutter, 15px);
-    margin: 0 auto;
+/* Position dropdown menu below the parent */
+.dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    list-style-type: none;
+    padding: 0; /* Remove padding */
+    margin: 0;
+    background: none; /* No background color */
+    width: calc(100% - 30px); /* Adjust width for left spacing */
+    border: none; /* No border */
+    box-shadow: none; /* No shadow */
+    z-index: 1; /* Ensure dropdown is above other content */
+    position: relative; /* Position relative to parent */
+    top: 0; /* Position dropdown menu directly below parent */
+    left: 20px; /* Add left space for dropdown menu */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    padding: 0; /* Remove padding for dropdown items */
+}
+
+/* Dropdown menu links */
+.dropdown-menu li a {
+    color: #333; /* Dark text color */
+    font-size: 15px; /* Slightly smaller font size for dropdown items */
+    display: flex; /* Flexbox for vertical alignment */
+    align-items: center;
+    height: 40px; /* Ensure full height clickable area */
+    padding: 0 15px; /* Add padding inside dropdown items */
+    box-sizing: border-box; /* Ensure padding does not affect height */
+    margin-bottom: 0; /* Remove space between dropdown items */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0; /* Slightly darker gray background on hover */
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Ensure dropdown pushes other items down */
+.sidebar__menu li.dropdown {
+    margin-bottom: 0; /* Ensure the dropdown's height is included in the layout */
+}
+
+/* Dropdown arrow styling */
+.dropdown > a::after {
+    content: "\f107"; /* Font Awesome chevron-down icon */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome Free */
+    font-weight: 900; /* Solid style */
+    display: inline-block;
+    margin-left: 10px; /* Space between menu text and arrow */
+    font-size: 12px; /* Adjust arrow size */
+    color: #333; /* Arrow color */
+    transition: transform 0.3s ease; /* Smooth transition for arrow rotation */
+}
+
+/* Rotate arrow when dropdown is open */
+.dropdown.active > a::after {
+    transform: rotate(180deg); /* Rotate arrow 180 degrees */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar__center {
+        flex: 1;
+    }
+
+    .navbar__right {
+        display: none;
+    }
+}
+
+/* Search Button */
+.search-toggle {
+    background: none;
+    border: none;
+    color: black; /* Change to desired text color */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    text-transform: uppercase; /* Optional: make text uppercase */
+    font-weight: bold; /* Optional: make text bold */
+    margin-left: 15px; /* Space between other elements and the search button */
+}
+
+/* Search Box */
+.search-box {
+    display: none; /* Hide search box by default */
+    position: absolute;
+    top: 60px; /* Position below the navbar or desired area */
+    right: 15px; /* Align with the right edge of the page */
+    background: #fff; /* White background for the search box */
+    border: 1px solid #ddd; /* Light border for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 10; /* Ensure search box is above other content */
+}
+
+/* Search Box Input */
+.search-box input {
+    width: 200px; /* Adjust width as needed */
+    padding: 8px;
+    border: 1px solid #ddd; /* Light border for the input field */
+    border-radius: 4px; /* Rounded corners for the input field */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Search Box Close Button */
+.search-close {
+    background: none;
+    border: none;
+    color: black; /* Change to desired text color */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Position close button inside the search box */
+    right: 10px; /* Position close button inside the search box */
 }
