@@ -4,83 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Craftive</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body> 
-    <div class="container">
-        <!--navbar start-->
-        <div class="navbar">
-            <nav class="left-menu">
-                <ul>
-                    <li><a href="">Menu</a></li>
-                </ul>
-            </nav>
-            <div class="logo">
-                <img src="images/logo.png" width="125px">
-            </div>
-            <nav class="right-menu">
-                <ul>
-                    <li><a href="">Search</a></li>
-                    <li><a href="">Account</a></li>
-                    <li><a href="">Bag(1)</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!--navbar end-->
-        <!--commerce slider start-->
-        <div class="commerce-slider">
-            <div class="slides">
-                <!--radio button start-->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!--radio button end-->
-                <!--slide image start-->
-                <div class="slide-first">
-                    <img src="images/slide1.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide2.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide3.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide4.jpg" alt="">
-                </div>
-                <!--slide image end-->
-                <!--automative nav start-->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-                <!--automative nav end-->
-            </div>
-            <!--manual nav start-->
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-            <!--manual nav end-->
-        </div>
-        <!--commerce slider end-->
 
-        <script>
-            var counter = 1;
-            setInterval(function(){
-                document.getElementById('radio' + counter).checked = true;
-                counter++;
-                if(counter > 4){
-                    counter = 1;
-                }
-            }, 5000);
-        </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div id="page" class="page-home">
+        <header>
+            <div class="inner-header">
+                <div class="container wde">
+                    <div class="wrap">
+
+                        <div class="header-left">
+                            <nav class="menu">
+                                <div class="list-inline">
+                                    <ul>
+                                        <li><a href=""><i class="ri-home-line"></i></a></li>
+                                    </ul>
+                                </div>
+                                <ul>
+                                    <li><a href=""><span>Menu</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="header-center">
+                            <img src="images/logo.png" alt="">
+                        </div>
+
+                        <div class="header-right">
+                            <div class="list-inline">
+                                <ul>
+                                    <li><a href=""><i class="ri-search-line"></i></a></li>
+                                    <li><a href=""><i class="ri-acc-line"></i></a></li>
+                                    <li><a href=""><span class="item-floating">0</span><i class="ri-bag-line"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main></main>
+        <footer></footer>
     </div>
+
+<script src="script.js"></script>
+
 </body>
 
 </html>
