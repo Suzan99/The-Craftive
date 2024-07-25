@@ -5,70 +5,282 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Craftive</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="navbar__left">
-                <button class="navbar__toggle" id="menu-toggle">
-                    Menu
-                </button>
+        <div class="container">
+            <div class="menu-btn">
+                <span>MENU</span>
             </div>
-            <div class="navbar__center">
-                <img src="images/logo.png" alt="Logo" class="navbar__logo">
-            </div>
-            <div class="navbar__right">
-                <button id="search-toggle" class="search-toggle">Search</button>
-                <!-- Search Box -->
-                <div id="search-box" class="search-box">
-                    <input type="text" placeholder="Search...">
-                    <button id="search-close" class="search-close">Close</button>
-                </div>
-                <button class="navbar__icon" id="account">
-                    Account
-                </button>
-                <button class="navbar__icon" id="cart">
-                    Cart
-                </button>
-            </div>
-        </nav>
-        <div class="sidebar" id="sidebar">
-            <button class="sidebar__close" id="sidebar-close">&times;</button>
-            <div class="language-container">
-                <button class="language-toggle">한국어 <i class="fas fa-chevron-down"></i></button>
-                <ul class="language-menu">
-                    <li><a href="#">한국어</a></li>
-                    <li><a href="#">English</a></li>
+            <img src="images/logo.png" alt="The Craftive Logo" class="logo">
+            <nav>
+                <ul class="nav-right">
+                    <li><a href="#search" id="search-btn">SEARCH</a></li>
+                    <li>
+                        <div class="account-btn">ACCOUNT</div>
+                    </li>
+                    <li>
+                        <div class="bag-btn">BAG <span class="bag-quantity">0</span></div>
+                    </li>
                 </ul>
-            </div>
-            <ul class="sidebar__menu">
-                <li><a href="#">About</a></li>
-                <li class="dropdown">
-                    <a href="#">Shop</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">전체</a></li>
-                        <li><a href="#">금속</a></li>
-                        <li><a href="#">도예</a></li>
-                        <li><a href="#">목공</a></li>
-                        <li><a href="#">유리</a></li>
-                        <li><a href="#">페브릭</a></li>
-                        <li><a href="#">가죽</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Notice</a></li>
-                <li class="dropdown">
-                    <a href="#">Class</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">예약</a></li>
-                        <li><a href="#">맵</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Artist</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
+            </nav>
         </div>
     </header>
-    <script src="script.js"></script>
+
+    <div class="overlay">
+        <div class="overlay-content"></div>
+    </div>
+
+    <div class="menu-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+            <div class="language-options">
+                <span>한국어</span><span class="dropdown-arrow"></span>
+                <div class="dropdown">
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+        <ul class="menu-items">
+            <li>About</li>
+            <li>
+                Shop
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    <li>전체</li>
+                    <li>금속</li>
+                    <li>도예</li>
+                    <li>목공</li>
+                    <li>유리</li>
+                    <li>페브릭</li>
+                    <li>가죽</li>
+                </ul>
+            </li>
+            <li>Notice</li>
+            <li>
+                Class
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    <li>예약</li>
+                    <li>맵</li>
+                </ul>
+            </li>
+            <li>Artist</li>
+            <li>Instagram</li>
+        </ul>
+    </div>
+
+    <div class="account-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+        </div>
+        <h2>ACCOUNT</h2>
+        <ul class="account-items">
+            <li>로그인</li>
+            <li>주문조회</li>
+            <li>찜</li>
+            <li>최근 본 상폼</li>
+            <li>쿠폰</li>
+            <li>적립금</li>
+            <li>회원정보</li>
+            <li>배송 주소록</li>
+        </ul>
+    </div>
+
+    <div class="bag-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+        </div>
+        <ul class="bag-items">
+            <li>쇼핑백 <span class="bag-quantity">0</span></li>
+            <li>찜 <span class="bag-quantity">0</span></li>
+        </ul>
+    </div>
+
+    <div class="search-box" id="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <section class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="images/slide1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="images/slide4.jpg" alt="Slide 4">
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="line-radio active"></div>
+            <div class="line-radio"></div>
+            <div class="line-radio"></div>
+            <div class="line-radio"></div>
+        </div>
+    </section>
+
+    <section class="grid-slider">
+        <div class="grid-container">
+            <div class="grid-arrow left-arrow"></div>
+            <div class="grids">
+                <div class="grid-group">
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid1.jpg" alt="Grid Image 1">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 1</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid2.jpg" alt="Grid Image 2">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 2</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid3.jpg" alt="Grid Image 3">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 3</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid4.jpg" alt="Grid Image 4">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-group">
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid5.jpg" alt="Grid Image 5">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 5</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid6.jpg" alt="Grid Image 6">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 6</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid7.jpg" alt="Grid Image 7">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 7</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid8.jpg" alt="Grid Image 8">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 8</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-group">
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid9.jpg" alt="Grid Image 9">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 9</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid10.jpg" alt="Grid Image 10">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 10</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid11.jpg" alt="Grid Image 11">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 11</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid12.jpg" alt="Grid Image 12">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-group">
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid13.jpg" alt="Grid Image 13">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 13</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid14.jpg" alt="Grid Image 14">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 14</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid15.jpg" alt="Grid Image 15">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 15</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid-image">
+                            <img src="images/grid16.jpg" alt="Grid Image 16">
+                        </div>
+                        <div class="grid-text">
+                            <p>Grid Item 16</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-arrow right-arrow"></div>
+        </div>
+        <div class="grid-navigation">
+            <div class="grid-line-radio active"></div>
+            <div class="grid-line-radio"></div>
+            <div class="grid-line-radio"></div>
+            <div class="grid-line-radio"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Craftive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
 </body>
 </html>
