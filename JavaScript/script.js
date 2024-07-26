@@ -13,10 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grids = document.querySelector('.grids');
     const gridGroups = document.querySelectorAll('.grid-group');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
+    const gridLeftArrow = document.querySelector('.grid-slider .left-arrow');
+    const gridRightArrow = document.querySelector('.grid-slider .right-arrow');
     const gridLineRadios = document.querySelectorAll('.grid-line-radio');
     let gridIndex = 0;
+
+    const products = document.querySelector('.products');
+    const productGroups = document.querySelectorAll('.product-group');
+    const productLeftArrow = document.querySelector('.product-slider .left-arrow');
+    const productRightArrow = document.querySelector('.product-slider .right-arrow');
+    const productLineRadios = document.querySelectorAll('.product-navigation .line-radio');
+    let productIndex = 0;
 
     const closeOverlay = () => {
         overlay.classList.remove('show-left', 'show-right');
@@ -107,12 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
         gridIndex = index;
     };
 
-    leftArrow.addEventListener('click', () => {
+    gridLeftArrow.addEventListener('click', () => {
         gridIndex = (gridIndex > 0) ? gridIndex - 1 : gridGroups.length - 1;
         showGridGroup(gridIndex);
     });
 
-    rightArrow.addEventListener('click', () => {
+    gridRightArrow.addEventListener('click', () => {
         gridIndex = (gridIndex < gridGroups.length - 1) ? gridIndex + 1 : 0;
         showGridGroup(gridIndex);
     });
@@ -124,4 +131,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showGridGroup(gridIndex);
+
+    const showProductGroup = (index) => {
+        products.style.transform = `translateX(${-100 * index}%)`;
+        productLineRadios.forEach((radio, i) => {
+            radio.classList.toggle('active', i === index);
+        });
+        productIndex = index;
+    };
+
+    productLeftArrow.addEventListener('click', () => {
+        productIndex = (productIndex > 0) ? productIndex - 1 : productGroups.length - 1;
+        showProductGroup(productIndex);
+    });
+
+    productRightArrow.addEventListener('click', () => {
+        productIndex = (productIndex < productGroups.length - 1) ? productIndex + 1 : 0;
+        showProductGroup(productIndex);
+    });
+
+    productLineRadios.forEach((radio, index) => {
+        radio.addEventListener('click', () => {
+            showProductGroup(index);
+        });
+    });
+
+    showProductGroup(productIndex);
 });
