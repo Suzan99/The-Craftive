@@ -161,7 +161,6 @@ header .bag-quantity {
     font-size: 14px;
     border: solid #fff;
     border-width: 0 2px 2px 0;
-    display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
 }
@@ -394,44 +393,27 @@ header .bag-quantity {
     cursor: pointer;
     z-index: 1;
     border: none;
-    background-color: transparent; /* Ensure arrows are visible */
+    background-color: transparent;
+    font-size: 24px;
+    line-height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.grid-arrow::before {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    position: absolute;
-}
-
-.grid-arrow::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    position: absolute;
-    transform: rotate(90deg);
+    transition: color 0.3s;
 }
 
 .grid-arrow.left-arrow {
-    left: 10px; /* Adjust position as needed */
-    transform: translateY(-50%) rotate(45deg);
+    left: 10px;
+    transform: translateY(-50%);
 }
 
 .grid-arrow.right-arrow {
-    right: 10px; /* Adjust position as needed */
-    transform: translateY(-50%) rotate(-45deg);
+    right: 10px;
+    transform: translateY(-50%);
 }
 
-.grid-arrow:hover::before,
-.grid-arrow:hover::after {
-    background-color: #f00;
+.grid-arrow:hover {
+    color: #f00;
 }
 
 .grid-navigation {
