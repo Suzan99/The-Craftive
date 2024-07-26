@@ -434,113 +434,6 @@ header .bag-quantity {
     background-color: #f00;
 }
 
-.product-slider {
-    max-width: 1300px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.product-slider h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.product-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.products {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 3); /* Adjust for the number of product groups */
-}
-
-.product-group {
-    display: flex;
-    flex: 0 0 100%; /* Each group takes up 100% of the width */
-    flex-wrap: wrap;
-}
-
-.product {
-    flex: 1 1 calc(33.333% - 20px); /* Three products in a row */
-    box-sizing: border-box;
-    margin: 10px;
-    text-align: left;
-}
-
-.product-image {
-    width: 100%;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-.product-text {
-    margin-top: 10px;
-}
-
-.product-text p {
-    margin: 0;
-}
-
-.product-arrow {
-    position: absolute;
-    top: 50%;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    z-index: 1;
-    border: solid #333;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: border-color 0.3s;
-}
-
-.product-arrow.left-arrow {
-    left: 10px;
-    transform: translateY(-50%) rotate(135deg);
-}
-
-.product-arrow.right-arrow {
-    right: 10px;
-    transform: translateY(-50%) rotate(-45deg);
-}
-
-.product-arrow:hover {
-    border-color: #f00;
-}
-
-.product-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.line-radio {
-    width: 30px;
-    height: 4px;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.line-radio.active,
-.line-radio:hover {
-    background-color: #f00;
-}
-
 footer {
     background-color: #333;
     color: #fff;
@@ -553,16 +446,11 @@ footer {
     .grid {
         flex: 0 0 calc(50% - 20px); /* Two grids in a row for smaller screens */
     }
-
-    .product {
-        flex: 0 0 calc(50% - 20px); /* Two products in a row for smaller screens */
-    }
 }
 
 @media (max-width: 480px) {
-    .grid,
-    .product {
-        flex: 0 0 100%; /* One grid/product in a row for the smallest screens */
+    .grid {
+        flex: 0 0 100%; /* One grid in a row for the smallest screens */
     }
 
     header nav {
