@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const productLineRadios = document.querySelectorAll('.product-navigation .line-radio');
     let productIndex = 0;
 
+    const artists = document.querySelector('.artists');
+    const artistGroups = document.querySelectorAll('.artist-group');
+    const artistLeftArrow = document.querySelector('.artist-slider .left-arrow');
+    const artistRightArrow = document.querySelector('.artist-slider .right-arrow');
+    const artistLineRadios = document.querySelectorAll('.artist-navigation .line-radio');
+    let artistIndex = 0;
+
     const closeOverlay = () => {
         overlay.classList.remove('show-left', 'show-right');
     };
@@ -157,4 +164,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showProductGroup(productIndex);
+
+    const showArtistGroup = (index) => {
+        artists.style.transform = `translateX(${-100 * index}%)`;
+        artistLineRadios.forEach((radio, i) => {
+            radio.classList.toggle('active', i === index);
+        });
+        artistIndex = index;
+    };
+
+    artistLeftArrow.addEventListener('click', () => {
+        artistIndex = (artistIndex > 0) ? artistIndex - 1 : artistGroups.length - 1;
+        showArtistGroup(artistIndex);
+    });
+
+    artistRightArrow.addEventListener('click', () => {
+        artistIndex = (artistIndex < artistGroups.length - 1) ? artistIndex + 1 : 0;
+        showArtistGroup(artistIndex);
+    });
+
+    artistLineRadios.forEach((radio, index) => {
+        radio.addEventListener('click', () => {
+            showArtistGroup(index);
+        });
+    });
+
+    showArtistGroup(artistIndex);
 });
