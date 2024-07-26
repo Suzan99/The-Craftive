@@ -6,6 +6,11 @@ git add .
 git commit -am "change 1"
 git push origin master
 
+navigation bar > HOME, SEARCH, ACCOUNT, BAG
+auto image slider
+grid slider
+
+
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>

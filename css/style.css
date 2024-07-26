@@ -161,6 +161,7 @@ header .bag-quantity {
     font-size: 14px;
     border: solid #fff;
     border-width: 0 2px 2px 0;
+    display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
 }
@@ -388,32 +389,29 @@ header .bag-quantity {
 .grid-arrow {
     position: absolute;
     top: 50%;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     z-index: 1;
-    border: none;
-    background-color: transparent;
-    font-size: 24px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.3s;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: border-color 0.3s;
 }
 
 .grid-arrow.left-arrow {
     left: 10px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(135deg);
 }
 
 .grid-arrow.right-arrow {
     right: 10px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(-45deg);
 }
 
 .grid-arrow:hover {
-    color: #f00;
+    border-color: #f00;
 }
 
 .grid-navigation {
