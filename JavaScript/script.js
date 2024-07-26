@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Splash screen functionality
+    const splash = document.querySelector('.splash');
+    if (splash && !sessionStorage.getItem('splashShown')) {
+        setTimeout(() => {
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 500); // Adjust the time for fade out as needed
+        }, 2000); // Adjust the time for the splash screen as needed
+        sessionStorage.setItem('splashShown', 'true');
+    } else if (splash) {
+        splash.style.display = 'none';
+    }
+
     const menuBtn = document.querySelector('.menu-btn');
     const accountBtn = document.querySelector('.account-btn');
     const bagBtn = document.querySelector('.bag-btn');
@@ -13,24 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grids = document.querySelector('.grids');
     const gridGroups = document.querySelectorAll('.grid-group');
-    const gridLeftArrow = document.querySelector('.grid-arrow.left-arrow');
-    const gridRightArrow = document.querySelector('.grid-arrow.right-arrow');
+    const leftArrow = document.querySelector('.grid-arrow.left-arrow');
+    const rightArrow = document.querySelector('.grid-arrow.right-arrow');
     const gridLineRadios = document.querySelectorAll('.grid-line-radio');
     let gridIndex = 0;
-
-    const products = document.querySelector('.products');
-    const productGroups = document.querySelectorAll('.product-group');
-    const productLeftArrow = document.querySelector('.product-arrow.left-arrow');
-    const productRightArrow = document.querySelector('.product-arrow.right-arrow');
-    const productLineRadios = document.querySelectorAll('.product-navigation .line-radio');
-    let productIndex = 0;
-
-    const artists = document.querySelector('.artists');
-    const artistGroups = document.querySelectorAll('.artist-group');
-    const artistLeftArrow = document.querySelector('.artist-arrow.left-arrow');
-    const artistRightArrow = document.querySelector('.artist-arrow.right-arrow');
-    const artistLineRadios = document.querySelectorAll('.artist-navigation .line-radio');
-    let artistIndex = 0;
 
     const closeOverlay = () => {
         overlay.classList.remove('show-left', 'show-right');
@@ -121,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
         gridIndex = index;
     };
 
-    gridLeftArrow.addEventListener('click', () => {
+    leftArrow.addEventListener('click', () => {
         gridIndex = (gridIndex > 0) ? gridIndex - 1 : gridGroups.length - 1;
         showGridGroup(gridIndex);
     });
 
-    gridRightArrow.addEventListener('click', () => {
+    rightArrow.addEventListener('click', () => {
         gridIndex = (gridIndex < gridGroups.length - 1) ? gridIndex + 1 : 0;
         showGridGroup(gridIndex);
     });
@@ -139,8 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showGridGroup(gridIndex);
 
+    const productContainer = document.querySelector('.products');
+    const productGroups = document.querySelectorAll('.product-group');
+    const productLeftArrow = document.querySelector('.product-arrow.left-arrow');
+    const productRightArrow = document.querySelector('.product-arrow.right-arrow');
+    const productLineRadios = document.querySelectorAll('.product-navigation .line-radio');
+    let productIndex = 0;
+
     const showProductGroup = (index) => {
-        products.style.transform = `translateX(${-100 * index}%)`;
+        productContainer.style.transform = `translateX(${-100 * index}%)`;
         productLineRadios.forEach((radio, i) => {
             radio.classList.toggle('active', i === index);
         });
@@ -165,8 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showProductGroup(productIndex);
 
+    const artistContainer = document.querySelector('.artists');
+    const artistGroups = document.querySelectorAll('.artist-group');
+    const artistLeftArrow = document.querySelector('.artist-arrow.left-arrow');
+    const artistRightArrow = document.querySelector('.artist-arrow.right-arrow');
+    const artistLineRadios = document.querySelectorAll('.artist-navigation .line-radio');
+    let artistIndex = 0;
+
     const showArtistGroup = (index) => {
-        artists.style.transform = `translateX(${-100 * index}%)`;
+        artistContainer.style.transform = `translateX(${-100 * index}%)`;
         artistLineRadios.forEach((radio, i) => {
             radio.classList.toggle('active', i === index);
         });

@@ -1,83 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us Crossword</title>
+    <title>About - The Craftive</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <div class="crossword-container">
-        <div class="crossword">
-            <!-- Crossword Grid -->
-            <div class="grid">
-                <div class="letter" id="A1">A</div>
-                <div class="letter" id="B1">B</div>
-                <div class="letter" id="O1">O</div>
-                <div class="letter" id="U1">U</div>
-                <div class="letter" id="T1">T</div>
-                <div class="letter" id="U2">U</div>
-                <div class="letter" id="S1">S</div>
-                <div class="letter" id="O2">O</div>
-                <div class="letter" id="U3">U</div>
-                <div class="letter" id="R1">R</div>
-                <div class="letter" id="M1">M</div>
-                <div class="letter" id="I1">I</div>
-                <div class="letter" id="S2">S</div>
-                <div class="letter" id="S3">S</div>
-                <div class="letter" id="I2">I</div>
-                <div class="letter" id="O3">O</div>
-                <div class="letter" id="N1">N</div>
-                <div class="letter" id="O4">O</div>
-                <div class="letter" id="U4">U</div>
-                <div class="letter" id="R2">R</div>
-                <div class="letter" id="S4">S</div>
-                <div class="letter" id="T2">T</div>
-                <div class="letter" id="O5">O</div>
-                <div class="letter" id="R3">R</div>
-                <div class="letter" id="Y1">Y</div>
-                <div class="letter" id="O6">O</div>
-                <div class="letter" id="U5">U</div>
-                <div class="letter" id="R4">R</div>
-                <div class="letter" id="V1">V</div>
-                <div class="letter" id="A1">A</div>
-                <div class="letter" id="L1">L</div>
-                <div class="letter" id="U6">U</div>
-                <div class="letter" id="E1">E</div>
-                <div class="letter" id="S5">S</div>
-                <div class="letter" id="T3">T</div>
-                <div class="letter" id="E2">E</div>
-                <div class="letter" id="A2">A</div>
-                <div class="letter" id="M2">M</div>
-                <div class="letter" id="P1">P</div>
-                <div class="letter" id="O7">O</div>
-                <div class="letter" id="R5">R</div>
-                <div class="letter" id="T4">T</div>
-                <div class="letter" id="F1">F</div>
-                <div class="letter" id="O8">O</div>
-                <div class="letter" id="L2">L</div>
-                <div class="letter" id="I3">I</div>
-                <div class="letter" id="O9">O</div>
-                <div class="letter" id="C1">C</div>
-                <div class="letter" id="N2">N</div>
-                <div class="letter" id="T5">T</div>
-                <div class="letter" id="A3">A</div>
-                <div class="letter" id="C2">C</div>
-                <div class="letter" id="T6">T</div>
-                <div class="letter" id="U6">U</div>
-                <div class="letter" id="S6">S</div>
+    <header>
+        <div class="container">
+            <div class="menu-btn">
+                <span>MENU</span>
             </div>
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="The Craftive Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-right">
+                    <li><a href="index.html#search" id="search-btn">SEARCH</a></li>
+                    <li>
+                        <div class="account-btn">ACCOUNT</div>
+                    </li>
+                    <li>
+                        <div class="bag-btn">BAG <span class="bag-quantity">0</span></div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <!-- Info Box -->
-        <div class="info-box">
-            <div class="info-content" id="infoContent">
-                <!-- Placeholder for info text -->
-            </div>
-        </div>
+    </header>
+
+    <div class="overlay">
+        <div class="overlay-content"></div>
     </div>
-    <script src="JavaScript/about.js"></script>
+
+    <div class="menu-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+            <div class="language-options">
+                <span>한국어</span><span class="dropdown-arrow"></span>
+                <div class="dropdown">
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+        <ul class="menu-items">
+            <li><a href="about.html">About</a></li>
+            <li>
+                Shop
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    <li>전체</li>
+                    <li>금속</li>
+                    <li>도예</li>
+                    <li>목공</li>
+                    <li>유리</li>
+                    <li>페브릭</li>
+                    <li>가죽</li>
+                </ul>
+            </li>
+            <li>Notice</li>
+            <li>
+                Class
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    <li>예약</li>
+                    <li>맵</li>
+                </ul>
+            </li>
+            <li>Artist</li>
+            <li>Instagram</li>
+        </ul>
+    </div>
+
+    <div class="account-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+        </div>
+        <h2>ACCOUNT</h2>
+        <ul class="account-items">
+            <li>로그인</li>
+            <li>주문조회</li>
+            <li>찜</li>
+            <li>최근 본 상폼</li>
+            <li>쿠폰</li>
+            <li>적립금</li>
+            <li>회원정보</li>
+            <li>배송 주소록</li>
+        </ul>
+    </div>
+
+    <div class="bag-overlay-content" style="display: none;">
+        <div class="overlay-header">
+            <span class="close-btn">&times;</span>
+        </div>
+        <ul class="bag-items">
+            <li>쇼핑백 <span class="bag-quantity">0</span></li>
+            <li>찜 <span class="bag-quantity">0</span></li>
+        </ul>
+    </div>
+
+    <div class="search-box" id="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <section class="about-section">
+        <div class="container">
+            <h1>About The Craftive</h1>
+            <p>Welcome to The Craftive, your one-stop destination for all things crafty and handmade. Our mission is to bring together a community of artisans and craft enthusiasts who share a passion for creating beautiful and unique items. Whether you're looking for handmade jewelry, pottery, woodworking, glass art, fabric art, or leather goods, we've got you covered.</p>
+            <h2>Our Story</h2>
+            <p>The Craftive was founded with the vision of creating a platform where artisans can showcase their work and connect with customers who appreciate the value of handmade items. We believe that each handcrafted piece tells a story and carries a part of the artist's soul. Our curated selection of crafts is a testament to the skill and creativity of our artisans.</p>
+            <h2>Meet Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="images/team1.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Creative Director</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team3.jpg" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <p>Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Craftive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
 </body>
 </html>
