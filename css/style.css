@@ -443,6 +443,33 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    header .menu-btn,
+    header .account-btn,
+    header .bag-btn {
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header .logo {
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul li {
+        margin-top: 10px;
+    }
+
     .grid {
         flex: 0 0 calc(50% - 20px); /* Two grids in a row for smaller screens */
     }
@@ -460,5 +487,10 @@ footer {
 
     header nav ul {
         padding-top: 10px;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
     }
 }
