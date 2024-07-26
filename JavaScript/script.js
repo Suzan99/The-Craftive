@@ -13,22 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grids = document.querySelector('.grids');
     const gridGroups = document.querySelectorAll('.grid-group');
-    const gridLeftArrow = document.querySelector('.grid-slider .left-arrow');
-    const gridRightArrow = document.querySelector('.grid-slider .right-arrow');
+    const gridLeftArrow = document.querySelector('.grid-arrow.left-arrow');
+    const gridRightArrow = document.querySelector('.grid-arrow.right-arrow');
     const gridLineRadios = document.querySelectorAll('.grid-line-radio');
     let gridIndex = 0;
 
     const products = document.querySelector('.products');
     const productGroups = document.querySelectorAll('.product-group');
-    const productLeftArrow = document.querySelector('.product-slider .left-arrow');
-    const productRightArrow = document.querySelector('.product-slider .right-arrow');
+    const productLeftArrow = document.querySelector('.product-arrow.left-arrow');
+    const productRightArrow = document.querySelector('.product-arrow.right-arrow');
     const productLineRadios = document.querySelectorAll('.product-navigation .line-radio');
     let productIndex = 0;
 
     const artists = document.querySelector('.artists');
     const artistGroups = document.querySelectorAll('.artist-group');
-    const artistLeftArrow = document.querySelector('.artist-slider .left-arrow');
-    const artistRightArrow = document.querySelector('.artist-slider .right-arrow');
+    const artistLeftArrow = document.querySelector('.artist-arrow.left-arrow');
+    const artistRightArrow = document.querySelector('.artist-arrow.right-arrow');
     const artistLineRadios = document.querySelectorAll('.artist-navigation .line-radio');
     let artistIndex = 0;
 
