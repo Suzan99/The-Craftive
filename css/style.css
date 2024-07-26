@@ -53,6 +53,14 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+header .container {
+    width: 90%; /* Reduced width to create space on the sides */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -468,9 +476,8 @@ header .bag-quantity {
 
 .grid-image img {
     width: 100%;
-    height: auto;
-    display: block;
-    max-height: 200px;
+    height: 150px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
 }
 
 .grid-text {
@@ -500,6 +507,7 @@ header .bag-quantity {
 .grid-arrow.left-arrow {
     left: 10px;
     transform: translateY(-50%) rotate(135deg);
+    border-color: transparent;
 }
 
 .grid-arrow.right-arrow {
@@ -608,6 +616,7 @@ header .bag-quantity {
 .product-arrow.left-arrow {
     left: 10px;
     transform: translateY(-50%) rotate(135deg);
+    border-color: transparent;
 }
 
 .product-arrow.right-arrow {
@@ -725,6 +734,7 @@ header .bag-quantity {
 .artist-arrow.left-arrow {
     left: 10px;
     transform: translateY(-50%) rotate(135deg);
+    border-color: transparent;
 }
 
 .artist-arrow.right-arrow {
@@ -733,7 +743,7 @@ header .bag-quantity {
 }
 
 .artist-arrow:hover {
-    border-color: #f00;
+    border-color: #396de8;
 }
 
 .artist-navigation {

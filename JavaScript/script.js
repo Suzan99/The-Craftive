@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const splash = document.querySelector('.splash');
     if (splash && !sessionStorage.getItem('splashShown')) {
         setTimeout(() => {
-            splash.style.opacity = '0';
+            splash.classList.add('hide');
             setTimeout(() => {
                 splash.style.display = 'none';
             }, 500); // Adjust the time for fade out as needed
