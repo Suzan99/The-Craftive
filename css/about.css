@@ -1,16 +1,21 @@
+/* About page specific styles */
 .content {
-    margin-top: 100px; /* Space between navigation bar and content */
+    margin-top: 80px; /* Adjust margin to give space between navigation bar and table */
+    margin-bottom: 20px; /* Adjust margin to give space between table and footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 100px);
+    height: auto;
 }
 
 .table-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    position: relative; /* Ensure it doesn't overlap with animated alphabets */
+    width: 100%; /* Ensure the table container takes full width */
+    height: auto; /* Adjust height to prevent overflow */
+    visibility: hidden; /* Initially hide the table container */
 }
 
 .crossword-table {
@@ -31,10 +36,9 @@
 
 .alphabet {
     position: absolute;
-    transition: all 1.5s ease;
+    transition: all 1.5s ease; /* Animation duration */
 }
 
 .alphabet.final {
-    position: relative;
-    transition: none;
+    transition: all 1.5s ease;
 }
