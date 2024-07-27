@@ -1,44 +1,62 @@
 /* About page specific styles */
 .content {
     margin-top: 80px; /* Adjust margin to give space between navigation bar and table */
-    margin-bottom: 20px; /* Adjust margin to give space between table and footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 100vh;
+    position: relative;
 }
 
 .table-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Ensure it doesn't overlap with animated alphabets */
-    width: 100%; /* Ensure the table container takes full width */
-    height: auto; /* Adjust height to prevent overflow */
+    position: fixed; /* Fixed position */
+    top: 80px; /* Adjust top position to move the table up */
+    width: 100%;
+    height: auto;
     visibility: hidden; /* Initially hide the table container */
 }
 
 .crossword-table {
     border-collapse: collapse;
-    margin: auto; /* Center the table */
-    width: auto; /* Make table width responsive */
-    height: auto; /* Make table height responsive */
+    margin: auto;
+    width: auto; 
+    height: auto;
 }
 
 .crossword-table td {
-    width: 40px; /* Adjust as needed */
-    height: 40px; /* Adjust as needed */
+    width: 40px;
+    height: 40px;
     text-align: center;
     vertical-align: middle;
     font-size: 24px;
     font-weight: normal;
+    position: relative;
 }
 
 .alphabet {
     position: absolute;
-    transition: all 1.5s ease; /* Animation duration */
+    transition: all 1.5s ease;
 }
 
-.alphabet.final {
+.final {
+    position: absolute;
     transition: all 1.5s ease;
+}
+
+.highlight {
+    border: 2px solid red;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.fade {
+    opacity: 0.3;
+}
+
+/* Hide the footer */
+footer {
+    display: none;
 }
