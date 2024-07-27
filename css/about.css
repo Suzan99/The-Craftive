@@ -1,6 +1,6 @@
 /* About page specific styles */
 .content {
-    margin-top: 80px; /* Adjust margin to give space between navigation bar and table */
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,18 +12,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed; /* Fixed position */
-    top: 80px; /* Adjust top position to move the table up */
+    position: fixed;
+    top: 80px;
     width: 100%;
     height: auto;
-    visibility: hidden; /* Initially hide the table container */
+    visibility: hidden;
 }
 
 .crossword-table {
     border-collapse: collapse;
     margin: auto;
-    width: auto; 
-    height: auto;
 }
 
 .crossword-table td {
@@ -47,16 +45,39 @@
 }
 
 .highlight {
-    border: 2px solid red;
-    border-radius: 50%;
-    transition: all 0.5s ease;
+    position: relative;
+    transition: background-color 0.5s ease;
+    /* background-color: yellow; /* For better visibility */
+}
+
+.highlight-group {
+    position: absolute;
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes drawEllipse {
+    from {
+        stroke-dasharray: 0, 1000;
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dasharray: 1000, 0;
+        stroke-dashoffset: 0;
+    }
 }
 
 .fade {
     opacity: 0.3;
+    transition: opacity 0.5s ease;
 }
 
-/* Hide the footer */
+/* Make the footer fixed at the bottom */
 footer {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* or any other background color */
+    text-align: center;
+    padding: 10px 0;
 }

@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableContainer = document.querySelector('.table-container');
     const table = document.querySelector('.crossword-table');
 
-    // Generate random alphabets for the table
     function generateRandomTable() {
-        console.log("Generating table");
         for (let i = 0; i < numRows; i++) {
             const row = document.createElement('tr');
             for (let j = 0; j < numCols; j++) {
@@ -33,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        console.log("Table generated");
     }
 
     generateRandomTable();
 
     // Animate the scattered alphabets
     function scatterAndGather() {
-        console.log("Scattering alphabets");
         const alphabets = [];
         for (let i = 0; i < numRows; i++) {
             for (let j = 0; j < numCols; j++) {
@@ -70,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             alphabets.forEach(span => span.remove());
             tableContainer.style.visibility = 'visible';
-            console.log("Table visible");
         }, 1600);
     }
 
@@ -103,15 +98,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("OURMISSION cells identified:", ourMissionCells);
 
+    let highlightGroup = document.createElement('div');
+    highlightGroup.className = 'highlight-group';
+    document.body.appendChild(highlightGroup);
+
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    let ellipse = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+    ellipse.setAttribute("fill", "none");
+    ellipse.setAttribute("stroke", "red");
+    ellipse.setAttribute("stroke-width", "2");
+    ellipse.setAttribute("stroke-dasharray", "1000");
+    ellipse.setAttribute("stroke-dashoffset", "1000");
+    ellipse.style.animation = "drawEllipse 1s forwards";
+    svg.appendChild(ellipse);
+    highlightGroup.appendChild(svg);
+
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
         console.log("Scrolling... current scroll position:", scrollPosition);
-        if (scrollPosition > 100) { // Adjust scroll position as needed
+
+        if (scrollPosition > 50) { // Adjust scroll position as needed
             console.log("Adding highlight class");
-            ourMissionCells.forEach(cell => {
-                console.log("Highlighting cell:", cell);
-                cell.classList.add('highlight');
-            });
+
+            const firstCell = ourMissionCells[0].getBoundingClientRect();
+            const lastCell = ourMissionCells[ourMissionCells.length - 1].getBoundingClientRect();
+            const top = firstCell.top + window.scrollY;
+            const left = firstCell.left + window.scrollX;
+            const width = lastCell.right - firstCell.left;
+            const height = lastCell.bottom - firstCell.top;
+
+            // Adjust oval size to fit tightly around the text
+            const padding = 10; // Reduce padding for a smaller, neater circle
+
+            // Position the oval correctly
+            highlightGroup.style.top = `${top - padding}px`;
+            highlightGroup.style.left = `${left - padding}px`;
+            highlightGroup.style.width = `${width + padding * 2}px`;
+            highlightGroup.style.height = `${height + padding * 2}px`;
+            highlightGroup.style.display = 'block';
+
+            svg.setAttribute("viewBox", `0 0 ${width + padding * 2} ${height + padding * 2}`);
+            ellipse.setAttribute("cx", `${(width + padding * 2) / 2}`);
+            ellipse.setAttribute("cy", `${(height + padding * 2) / 2}`);
+            ellipse.setAttribute("rx", `${(width + padding) / 2}`);
+            ellipse.setAttribute("ry", `${(height + padding) / 2}`);
+            ellipse.style.animation = "drawEllipse 1s forwards";
+
             table.querySelectorAll('td').forEach(cell => {
                 if (!ourMissionCells.includes(cell)) {
                     cell.classList.add('fade');
@@ -120,8 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Highlighted OURMISSION");
         } else {
             console.log("Removing highlight class");
+            highlightGroup.style.display = 'none';
+
             ourMissionCells.forEach(cell => {
-                console.log("Removing highlight from cell:", cell);
                 cell.classList.remove('highlight');
             });
             table.querySelectorAll('td').forEach(cell => {
