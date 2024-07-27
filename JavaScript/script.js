@@ -1,18 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Splash screen functionality
-    const splash = document.querySelector('.splash');
-    if (splash && !sessionStorage.getItem('splashShown')) {
-        setTimeout(() => {
-            splash.classList.add('hide');
-            setTimeout(() => {
-                splash.style.display = 'none';
-            }, 500); // Adjust the time for fade out as needed
-        }, 2000); // Adjust the time for the splash screen as needed
-        sessionStorage.setItem('splashShown', 'true');
-    } else if (splash) {
-        splash.style.display = 'none';
-    }
-
     const menuBtn = document.querySelector('.menu-btn');
     const accountBtn = document.querySelector('.account-btn');
     const bagBtn = document.querySelector('.bag-btn');
@@ -91,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    logoLink.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
     const showSlide = (index) => {
         slides.forEach((slide, i) => {
             slide.style.transform = `translateX(${-100 * index}%)`;
@@ -114,7 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
 
     const showGridGroup = (index) => {
-        grids.style.transform = `translateX(${-100 * index}%)`;
+        gridGroups.forEach((group, i) => {
+            group.style.display = i === index ? 'flex' : 'none';
+        });
         gridLineRadios.forEach((radio, i) => {
             radio.classList.toggle('active', i === index);
         });
@@ -147,7 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let productIndex = 0;
 
     const showProductGroup = (index) => {
-        productContainer.style.transform = `translateX(${-100 * index}%)`;
+        productGroups.forEach((group, i) => {
+            group.style.display = i === index ? 'flex' : 'none';
+        });
         productLineRadios.forEach((radio, i) => {
             radio.classList.toggle('active', i === index);
         });
@@ -180,7 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let artistIndex = 0;
 
     const showArtistGroup = (index) => {
-        artistContainer.style.transform = `translateX(${-100 * index}%)`;
+        artistGroups.forEach((group, i) => {
+            group.style.display = i === index ? 'flex' : 'none';
+        });
         artistLineRadios.forEach((radio, i) => {
             radio.classList.toggle('active', i === index);
         });
@@ -204,4 +200,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showArtistGroup(artistIndex);
+
+    const splashScreen = document.querySelector('.splash');
+    const logo = document.querySelector('.splash-logo');
+
+    if (!sessionStorage.getItem('splashDisplayed')) {
+        setTimeout(() => {
+            splashScreen.classList.add('hide');
+        }, 3000); // Adjust the duration as needed
+
+        splashScreen.addEventListener('transitionend', () => {
+            splashScreen.style.display = 'none';
+        });
+
+        sessionStorage.setItem('splashDisplayed', 'true');
+    } else {
+        splashScreen.style.display = 'none';
+    }
 });

@@ -1,63 +1,40 @@
-.about-section {
-    padding: 40px 0;
-    background-color: #f9f9f9;
-}
-
-.about-section .container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-section h1,
-.about-section h2 {
-    color: #333;
-}
-
-.about-section p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.team {
+.content {
+    margin-top: 100px; /* Space between navigation bar and content */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
 }
 
-.team-member {
-    width: 30%;
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.crossword-table {
+    border-collapse: collapse;
+    margin: auto; /* Center the table */
+    width: auto; /* Make table width responsive */
+    height: auto; /* Make table height responsive */
+}
+
+.crossword-table td {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
     text-align: center;
-    margin-bottom: 40px;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: normal;
 }
 
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+.alphabet {
+    position: absolute;
+    transition: all 1.5s ease;
 }
 
-.team-member h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    color: #666;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-    .team-member {
-        width: 100%;
-    }
+.alphabet.final {
+    position: relative;
+    transition: none;
 }

@@ -53,14 +53,6 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header .container {
-    width: 90%; /* Reduced width to create space on the sides */
-    margin: 0 auto; /* Center the container */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -73,6 +65,14 @@ header .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+header .container {
+    width: 90%; /* Reduced width to create space on the sides */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .menu-btn,
@@ -480,6 +480,7 @@ header .bag-quantity {
     object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
 }
 
+
 .grid-text {
     padding: 20px;
     width: 50%;
@@ -490,7 +491,16 @@ header .bag-quantity {
     margin: 0;
 }
 
-.grid-arrow {
+/* Adjusting arrow positions and adding padding to the containers */
+.grid-container,
+.product-container,
+.artist-container {
+    padding: 0 30px; /* Add padding to container to create space between items and arrows */
+}
+
+.grid-arrow,
+.product-arrow,
+.artist-arrow {
     position: absolute;
     top: 50%;
     width: 15px;
@@ -504,19 +514,31 @@ header .bag-quantity {
     transition: border-color 0.3s;
 }
 
-.grid-arrow.left-arrow {
-    left: 10px;
+.grid-arrow.left-arrow,
+.product-arrow.left-arrow,
+.artist-arrow.left-arrow {
+    left: 5px; /* Adjusted from 10px */
     transform: translateY(-50%) rotate(135deg);
-    border-color: transparent;
 }
 
-.grid-arrow.right-arrow {
-    right: 10px;
+.grid-arrow.right-arrow,
+.product-arrow.right-arrow,
+.artist-arrow.right-arrow {
+    right: 5px; /* Adjusted from 10px */
     transform: translateY(-50%) rotate(-45deg);
 }
 
-.grid-arrow:hover {
+.grid-arrow:hover,
+.product-arrow:hover,
+.artist-arrow:hover {
     border-color: #f00;
+}
+
+/* Hide extra groups initially */
+.grid-group:not(:first-child),
+.product-group:not(:first-child),
+.artist-group:not(:first-child) {
+    display: none;
 }
 
 .grid-navigation {
@@ -597,35 +619,6 @@ header .bag-quantity {
 
 .product-text p {
     margin: 0;
-}
-
-.product-arrow {
-    position: absolute;
-    top: 50%;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    z-index: 1;
-    border: solid #333;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: border-color 0.3s;
-}
-
-.product-arrow.left-arrow {
-    left: 10px;
-    transform: translateY(-50%) rotate(135deg);
-    border-color: transparent;
-}
-
-.product-arrow.right-arrow {
-    right: 10px;
-    transform: translateY(-50%) rotate(-45deg);
-}
-
-.product-arrow:hover {
-    border-color: #f00;
 }
 
 .product-navigation {
@@ -715,35 +708,6 @@ header .bag-quantity {
     line-height: 1.5em;
     display: flex;
     align-items: center;
-}
-
-.artist-arrow {
-    position: absolute;
-    top: 50%;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    z-index: 1;
-    border: solid #333;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: border-color 0.3s;
-}
-
-.artist-arrow.left-arrow {
-    left: 10px;
-    transform: translateY(-50%) rotate(135deg);
-    border-color: transparent;
-}
-
-.artist-arrow.right-arrow {
-    right: 10px;
-    transform: translateY(-50%) rotate(-45deg);
-}
-
-.artist-arrow:hover {
-    border-color: #396de8;
 }
 
 .artist-navigation {

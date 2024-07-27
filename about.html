@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Craftive</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/splash.css">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styles -->
+    <link rel="stylesheet" href="css/about.css"> <!-- About page specific styles -->
 </head>
 <body>
-    <div class="splash">
-        <img src="images/logo.png" alt="The Craftive Logo" class="splash-logo">
-    </div>
-    
     <header>
         <div class="container nav-container">
             <div class="menu-btn">
                 <span>MENU</span>
             </div>
-            <img src="images/logo.png" alt="The Craftive Logo" class="logo">
+            <img src="images/logo.png" alt="The Craftive Logo" class="logo" id="logo-link">
             <nav>
                 <ul class="nav-right">
-                    <li><a href="#search" id="search-btn">SEARCH</a></li>
+                    <li><a href="#" id="search-btn">SEARCH</a></li>
                     <li>
                         <div class="account-btn">ACCOUNT</div>
                     </li>
@@ -31,11 +27,12 @@
             </nav>
         </div>
     </header>
-    
+
     <div class="overlay">
         <div class="overlay-content"></div>
     </div>
 
+    <!-- Menu Overlay Content -->
     <div class="menu-overlay-content" style="display: none;">
         <div class="overlay-header">
             <span class="close-btn">&times;</span>
@@ -75,6 +72,7 @@
         </ul>
     </div>
 
+    <!-- Account Overlay Content -->
     <div class="account-overlay-content" style="display: none;">
         <div class="overlay-header">
             <span class="close-btn">&times;</span>
@@ -92,6 +90,7 @@
         </ul>
     </div>
 
+    <!-- Bag Overlay Content -->
     <div class="bag-overlay-content" style="display: none;">
         <div class="overlay-header">
             <span class="close-btn">&times;</span>
@@ -106,397 +105,11 @@
         <input type="text" placeholder="Search...">
     </div>
 
-    <section class="slider">
-        <div class="slides">
-            <div class="slide"><img src="images/slide1.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="images/slide2.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="images/slide3.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="images/slide4.jpg" alt="Slide 4"></div>
-        </div>
-        <div class="navigation">
-            <div class="line-radio"></div>
-            <div class="line-radio"></div>
-            <div class="line-radio"></div>
-            <div class="line-radio"></div>
-        </div>
-    </section>
-
-    <section class="grid-slider">
-        <div class="grid-container">
-            <div class="grid-arrow left-arrow"></div>
-            <div class="grids">
-                <div class="grid-group">
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid1.jpg" alt="Grid Image 1">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 1</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid2.jpg" alt="Grid Image 2">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 2</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid3.jpg" alt="Grid Image 3">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 3</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid4.jpg" alt="Grid Image 4">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 4</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-group">
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid5.jpg" alt="Grid Image 5">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 5</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid6.jpg" alt="Grid Image 6">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 6</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid7.jpg" alt="Grid Image 7">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 7</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid8.jpg" alt="Grid Image 8">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 8</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-group">
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid9.jpg" alt="Grid Image 9">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 9</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid10.jpg" alt="Grid Image 10">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 10</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid11.jpg" alt="Grid Image 11">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 11</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid12.jpg" alt="Grid Image 12">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 12</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-group">
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid13.jpg" alt="Grid Image 13">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 13</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid14.jpg" alt="Grid Image 14">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 14</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid15.jpg" alt="Grid Image 15">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 15</p>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-image">
-                            <img src="images/grid16.jpg" alt="Grid Image 16">
-                        </div>
-                        <div class="grid-text">
-                            <p>Grid Item 16</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-arrow right-arrow"></div>
-        </div>
-        <div class="grid-navigation">
-            <div class="grid-line-radio active"></div>
-            <div class="grid-line-radio"></div>
-            <div class="grid-line-radio"></div>
-            <div class="grid-line-radio"></div>
-        </div>
-    </section>
-
-    <section class="product-slider">
-        <h2>인기 상폼</h2>
-        <div class="product-container">
-            <div class="product-arrow left-arrow"></div>
-            <div class="products">
-                <div class="product-group">
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product1.jpg" alt="Product 1">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 1 description</p>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product2.jpg" alt="Product 2">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 2 description</p>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product3.jpg" alt="Product 3">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 3 description</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-group">
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product4.jpg" alt="Product 4">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 4 description</p>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product5.jpg" alt="Product 5">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 5 description</p>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="images/product6.jpg" alt="Product 6">
-                        </div>
-                        <div class="product-text">
-                            <p>Product 6 description</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product-arrow right-arrow"></div>
-        </div>
-        <div class="product-navigation">
-            <div class="line-radio"></div>
-            <div class="line-radio"></div>
-        </div>
-    </section>
-
-    <section class="artist-slider">
-        <h2>작가 목록</h2>
-        <div class="artist-container">
-            <div class="artist-arrow left-arrow"></div>
-            <div class="artists">
-                <div class="artist-group">
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist1.jpg" alt="Artist 1">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 1</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist2.jpg" alt="Artist 2">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 2</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist3.jpg" alt="Artist 3">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 3</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist4.jpg" alt="Artist 4">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 4</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist5.jpg" alt="Artist 5">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 5</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist6.jpg" alt="Artist 6">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 6</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist7.jpg" alt="Artist 7">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 7</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist8.jpg" alt="Artist 8">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 8</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist9.jpg" alt="Artist 9">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 9</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="artist-group">
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist10.jpg" alt="Artist 10">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 10</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist11.jpg" alt="Artist 11">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 11</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist12.jpg" alt="Artist 12">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 12</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist13.jpg" alt="Artist 13">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 13</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist14.jpg" alt="Artist 14">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 14</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist15.jpg" alt="Artist 15">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 15</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist16.jpg" alt="Artist 16">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 16</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist17.jpg" alt="Artist 17">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 17</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <div class="artist-image">
-                            <img src="images/artist18.jpg" alt="Artist 18">
-                        </div>
-                        <div class="artist-text">
-                            <p>Artist 18</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="artist-arrow right-arrow"></div>
-        </div>
-        <div class="artist-navigation">
-            <div class="line-radio"></div>
-            <div class="line-radio"></div>
+    <section class="content">
+        <div class="table-container">
+            <table class="crossword-table">
+                <!-- Table content will be dynamically added by JavaScript -->
+            </table>
         </div>
     </section>
 
@@ -506,6 +119,7 @@
         </div>
     </footer>
 
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js"></script> <!-- Common scripts -->
+    <script src="javascript/about.js"></script> <!-- About page specific scripts -->
 </body>
 </html>
