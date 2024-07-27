@@ -1,43 +1,9 @@
-/* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for Firefox */
-html {
-    scrollbar-width: none;
-}
-
-/* Hide scrollbar for IE, Edge */
-body {
-    -ms-overflow-style: none; /* IE and Edge */
-    overflow: -moz-scrollbars-none; /* Older versions of Firefox */
-}
-
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.splash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    transition: opacity 0.5s ease;
-}
-
-.splash-logo {
-    max-width: 200px;
 }
 
 header {
@@ -58,6 +24,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 0 20px; /* Added space between border and items */
 }
 
 header .logo {
@@ -65,14 +32,6 @@ header .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-header .container {
-    width: 90%; /* Reduced width to create space on the sides */
-    margin: 0 auto; /* Center the container */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 header .menu-btn,
@@ -83,7 +42,6 @@ header .bag-btn {
     font-size: 18px;
     margin-left: 20px;
 }
-
 
 header nav {
     display: flex;
@@ -385,351 +343,6 @@ header .bag-quantity {
     font-size: 16px;
 }
 
-.slider {
-    position: relative;
-    max-width: 1300px; /* Set maximum width */
-    margin: 80px auto 20px auto; /* Adjusted for fixed header */
-    overflow: hidden;
-    border-radius: 10px;
-    max-height: 500px; /* Set maximum height */
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%; /* Ensure slides take full height */
-}
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%; /* Ensure images fit within the slider height */
-    object-fit: cover; /* Maintain aspect ratio while covering the container */
-    border-radius: 10px;
-}
-
-.navigation {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.line-radio {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.line-radio.active,
-.line-radio:hover {
-    background-color: #f00;
-}
-
-.grid-slider {
-    max-width: 1300px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden; /* Ensure only one group is visible */
-}
-
-.grid-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.grids {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 4); /* Adjust for the number of grid groups */
-}
-
-.grid-group {
-    display: flex;
-    flex: 0 0 100%; /* Each group takes up 100% of the width */
-    flex-wrap: wrap;
-}
-
-.grid {
-    display: flex;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    flex: 1 1 calc(25% - 20px); /* Four grids in a row */
-    box-sizing: border-box;
-    align-items: flex-end;
-    margin: 10px;
-}
-
-.grid-image {
-    width: 50%;
-    overflow: hidden;
-}
-
-.grid-image img {
-    width: 100%;
-    height: 150px; /* Set a fixed height for uniformity */
-    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
-}
-
-
-.grid-text {
-    padding: 20px;
-    width: 50%;
-    text-align: left;
-}
-
-.grid-text p {
-    margin: 0;
-}
-
-/* Adjusting arrow positions and adding padding to the containers */
-.grid-container,
-.product-container,
-.artist-container {
-    padding: 0 30px; /* Add padding to container to create space between items and arrows */
-}
-
-.grid-arrow,
-.product-arrow,
-.artist-arrow {
-    position: absolute;
-    top: 50%;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    z-index: 1;
-    border: solid #333;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: border-color 0.3s;
-}
-
-.grid-arrow.left-arrow,
-.product-arrow.left-arrow,
-.artist-arrow.left-arrow {
-    left: 5px; /* Adjusted from 10px */
-    transform: translateY(-50%) rotate(135deg);
-}
-
-.grid-arrow.right-arrow,
-.product-arrow.right-arrow,
-.artist-arrow.right-arrow {
-    right: 5px; /* Adjusted from 10px */
-    transform: translateY(-50%) rotate(-45deg);
-}
-
-.grid-arrow:hover,
-.product-arrow:hover,
-.artist-arrow:hover {
-    border-color: #f00;
-}
-
-/* Hide extra groups initially */
-.grid-group:not(:first-child),
-.product-group:not(:first-child),
-.artist-group:not(:first-child) {
-    display: none;
-}
-
-.grid-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.grid-line-radio {
-    width: 30px;
-    height: 4px;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.grid-line-radio.active,
-.grid-line-radio:hover {
-    background-color: #f00;
-}
-
-.product-slider {
-    max-width: 1300px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.product-slider h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.product-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.products {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 2); /* Adjust for the number of product groups */
-}
-
-.product-group {
-    display: flex;
-    flex: 0 0 100%; /* Each group takes up 100% of the width */
-    flex-wrap: wrap;
-}
-
-.product {
-    flex: 1 1 calc(33.333% - 20px); /* Three products in a row */
-    box-sizing: border-box;
-    margin: 10px;
-    text-align: left;
-}
-
-.product-image {
-    width: 100%;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    max-height: 300px;
-}
-
-.product-text {
-    margin-top: 10px;
-}
-
-.product-text p {
-    margin: 0;
-}
-
-.product-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.line-radio {
-    width: 30px;
-    height: 4px;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.line-radio.active,
-.line-radio:hover {
-    background-color: #f00;
-}
-
-.artist-slider {
-    max-width: 1300px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.artist-slider h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.artist-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.artists {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 2); /* Adjust for the number of artist groups */
-}
-
-.artist-group {
-    display: flex;
-    flex: 0 0 100%; /* Each group takes up 100% of the width */
-    flex-wrap: wrap;
-}
-
-.artist {
-    flex: 1 1 calc(33.333% - 20px); /* Three artists in a row */
-    box-sizing: border-box;
-    margin: 10px;
-    text-align: left;
-}
-
-.artist-image {
-    width: 30%;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.artist-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 50%;
-    max-height: 120px;
-    object-fit: cover;
-}
-
-.artist-text {
-    display: inline-block;
-    width: 60%;
-    padding-left: 10px;
-    vertical-align: middle;
-}
-
-.artist-text p {
-    margin: 0;
-    line-height: 1.5em;
-    display: flex;
-    align-items: center;
-}
-
-.artist-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.line-radio {
-    width: 30px;
-    height: 4px;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.line-radio.active,
-.line-radio:hover {
-    background-color: #f00;
-}
-
 footer {
     background-color: #333;
     color: #fff;
@@ -739,26 +352,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .grid {
-        flex: 0 0 calc(50% - 20px); /* Two grids in a row for smaller screens */
-    }
-
-    .product {
-        flex: 0 0 calc(50% - 20px); /* Two products in a row for smaller screens */
-    }
-
-    .artist {
-        flex: 0 0 calc(50% - 20px); /* Two artists in a row for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .grid,
-    .product,
-    .artist {
-        flex: 0 0 100%; /* One grid/product/artist in a row for the smallest screens */
-    }
-
     header nav {
         text-align: center;
         float: none;
